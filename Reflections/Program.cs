@@ -33,17 +33,31 @@ class Program
 
 
         // Problem 2
-        Person person = new Person();
+        //Person person = new Person();
 
-        Type type = typeof(Person);
+        //Type type = typeof(Person);
 
-        FieldInfo f = type.GetField("age", BindingFlags.NonPublic | BindingFlags.Instance);
+        //FieldInfo f = type.GetField("age", BindingFlags.NonPublic | BindingFlags.Instance);
 
-        f.SetValue(person, 22);
+        //f.SetValue(person, 22);3
 
-        int val = (int)f.GetValue(person);
+        //int val = (int)f.GetValue(person);
 
-        Console.WriteLine("Age: " + val);
+        //Console.WriteLine("Age: " + val);
+
+
+        // Problem 3
+        Calculator calculator = new Calculator();
+
+        Type type = typeof(Calculator);
+
+        MethodInfo method = type.GetMethod("Multiply",
+            BindingFlags.NonPublic | BindingFlags.Instance
+        );
+
+        object res = method.Invoke(calculator, new object[] { 54, 5 });
+
+        Console.WriteLine("Result: " + res);
 
         Console.ReadKey();
     }
