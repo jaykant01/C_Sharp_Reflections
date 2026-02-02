@@ -92,15 +92,27 @@ class Program
         //}
 
 
-        // Problem 6
-        Type type = typeof(Configuration);
+        // Problem 7
+        //Type type = typeof(Configuration);
 
-        FieldInfo f = type.GetField("API_KEY", BindingFlags.NonPublic | BindingFlags.Static);
+        //FieldInfo f = type.GetField("API_KEY", BindingFlags.NonPublic | BindingFlags.Static);
 
-        f.SetValue(null, "REFLECTION_UPDATED_KEY");
+        //f.SetValue(null, "REFLECTION_UPDATED_KEY");
 
-        Configuration.PrintKey();
+        //Configuration.PrintKey();
 
+
+        // Problem 8    
+        Dictionary<string, object> data = new Dictionary<string, object>
+        {
+            { "Id", 101 },
+            { "Name", "Jaykant" }
+        };
+
+        Person1 p = ObjectMapper.ToObject<Person1>(typeof(Person1), data);
+
+        Console.WriteLine(p.Id);
+        Console.WriteLine(p.Name);
 
         Console.ReadKey();
     }
