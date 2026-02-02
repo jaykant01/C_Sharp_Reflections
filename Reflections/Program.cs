@@ -61,11 +61,36 @@ class Program
 
 
         // Problem 4
-        Type type = typeof(Stud);
+        //Type type = typeof(Stud);
 
+        //object obj = Activator.CreateInstance(type);
+
+
+        // Problem 5
+        Console.Write("Enter method name (Add / Subtract / Multiply): ");
+        string methodName = Console.ReadLine();
+
+        Console.Write("Enter first number: ");
+        int a = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter second number: ");
+        int b = int.Parse(Console.ReadLine());
+
+        Type type = typeof(MathOperations);
         object obj = Activator.CreateInstance(type);
 
-        //Stud s = (Stud)(obj)
+        MethodInfo method = type.GetMethod(methodName);
+
+        if (method != null)
+        {
+            object result = method.Invoke(obj, new object[] { a, b });
+            Console.WriteLine($"Result: {result}");
+        }
+        else
+        {
+            Console.WriteLine("Method not found");
+        }
+
 
         Console.ReadKey();
     }
