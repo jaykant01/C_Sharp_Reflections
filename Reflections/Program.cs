@@ -47,17 +47,25 @@ class Program
 
 
         // Problem 3
-        Calculator calculator = new Calculator();
+        //Calculator calculator = new Calculator();
 
-        Type type = typeof(Calculator);
+        //Type type = typeof(Calculator);
 
-        MethodInfo method = type.GetMethod("Multiply",
-            BindingFlags.NonPublic | BindingFlags.Instance
-        );
+        //MethodInfo method = type.GetMethod("Multiply",
+        //    BindingFlags.NonPublic | BindingFlags.Instance
+        //);
 
-        object res = method.Invoke(calculator, new object[] { 54, 5 });
+        //object res = method.Invoke(calculator, new object[] { 54, 5 });
 
-        Console.WriteLine("Result: " + res);
+        //Console.WriteLine("Result: " + res);
+
+
+        // Problem 4
+        Type type = typeof(Stud);
+
+        object obj = Activator.CreateInstance(type);
+
+        //Stud s = (Stud)(obj)
 
         Console.ReadKey();
     }
