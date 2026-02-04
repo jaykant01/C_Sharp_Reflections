@@ -116,10 +116,16 @@ class Program
 
 
         // Problem 2
-        Employee emp = new Employee(101, "Jay", 55000.75);
-        string jsonOutput = JSONConverter.ToJson(emp);
-        Console.WriteLine("JSON Representation:");
-        Console.WriteLine(jsonOutput);
+        //Employee emp = new Employee(101, "Jay", 55000.75);
+        //string jsonOutput = JSONConverter.ToJson(emp);
+        //Console.WriteLine("JSON Representation:");
+        //Console.WriteLine(jsonOutput);
+
+
+        // Problem 3
+        IGreeting greeting = new Greeting();
+        LoggingProxy proxy = new LoggingProxy(greeting);
+        proxy.CallMethod("SayHello", new object[] { "Jay" });
 
         Console.ReadKey();
     }
