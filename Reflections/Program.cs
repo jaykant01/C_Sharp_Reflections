@@ -102,17 +102,24 @@ class Program
         //Configuration.PrintKey();
 
 
-        // Problem 8    
-        Dictionary<string, object> data = new Dictionary<string, object>
-        {
-            { "Id", 101 },
-            { "Name", "Jaykant" }
-        };
+        // Problem 1  
+        //Dictionary<string, object> data = new Dictionary<string, object>
+        //{
+        //    { "Id", 101 },
+        //    { "Name", "Jaykant" }
+        //};
 
-        Person1 p = ObjectMapper.ToObject<Person1>(typeof(Person1), data);
+        //Person1 p = ObjectMapper.ToObject<Person1>(typeof(Person1), data);
 
-        Console.WriteLine(p.Id);
-        Console.WriteLine(p.Name);
+        //Console.WriteLine(p.Id);
+        //Console.WriteLine(p.Name);
+
+
+        // Problem 2
+        Employee emp = new Employee(101, "Jay", 55000.75);
+        string jsonOutput = JSONConverter.ToJson(emp);
+        Console.WriteLine("JSON Representation:");
+        Console.WriteLine(jsonOutput);
 
         Console.ReadKey();
     }
