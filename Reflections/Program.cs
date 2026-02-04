@@ -123,9 +123,13 @@ class Program
 
 
         // Problem 3
-        IGreeting greeting = new Greeting();
-        LoggingProxy proxy = new LoggingProxy(greeting);
-        proxy.CallMethod("SayHello", new object[] { "Jay" });
+        //IGreeting greeting = new Greeting();
+        //LoggingProxy proxy = new LoggingProxy(greeting);
+        //proxy.CallMethod("SayHello", new object[] { "Jay" });
+
+        // Problem 5
+        TestClass test = new TestClass();
+        MethodTimer.MeasureExecutionTime(test);
 
         Console.ReadKey();
     }
